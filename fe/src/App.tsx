@@ -1,9 +1,12 @@
-import { LoginPage } from "./pages/LoginPage";
+import { routes } from "./routes";
+import { RouterProvider } from "react-router-dom";
 
 export function App() {
+  const router = routes
+
   return (
     <>
-      <LoginPage />
+      <RouterProvider router={router}/>
     </>
   )
 }
