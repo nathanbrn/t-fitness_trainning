@@ -1,4 +1,7 @@
-import { Logo } from "../../components/Logo";
+import { useState } from "react"
+import { useNavigate } from "react-router-dom"
+import { Logo } from "../../components/Logo"
+import { credentials } from "../../utils/credencials"
 import { 
   ButtonContainer, 
   FooterContainer, 
@@ -6,9 +9,23 @@ import {
   HeaderContainer, 
   LoginContainer, 
   MainContainer 
-} from "./styles";
+} from "./styles"
 
 export function LoginPage() {
+  const [user, setUser] = useState('')
+  const [password, setPassword] = useState('')
+  const navigate = useNavigate()
+
+  function handleLogin() {
+    const credentialsUser = credentials
+    
+    if (user === credentialsUser.name && password === credentialsUser.password) {
+      navigate('/home')
+    } else {
+      console.log('Usuário ou senha incorretos');
+    }
+  }
+
   return (
     <LoginContainer>
       <HeaderContainer>
@@ -17,17 +34,41 @@ export function LoginPage() {
 
       <MainContainer>
         <FormContainer>
-          <input type="text" placeholder="Digite o usuário"/>
-          <input type="password" placeholder="Digite a senha"/>
+          <input
+            type="text"
+            onChange={(event) => {
+              const value = event.target.value;
+              setUser(value);
+            }}
+            value={user}
+            placeholder="Digite o usuário"
+          />
+          <input
+            type="password"
+            onChange={(event) => {
+              const value = event.target.value;
+              setPassword(value);
+            }}
+            value={password}
+            placeholder="Digite a senha"
+          />
         </FormContainer>
-        <ButtonContainer className="btnLogin">Login</ButtonContainer>
+        <ButtonContainer onClick={() => handleLogin()} className="btnLogin">Login</ButtonContainer>
       </MainContainer>
 
       <FooterContainer>
         <p className="paragrafo">Desenvolvido por:</p>
-        <a href="https://nathanbrn.github.io/Links_Sociais/" target="_blank">@breno_nathanael</a>
-        <a className="insta" href="http://instagram.com/tiagootome" target="_blank">@tiagootome</a>
+        <a href="https://nathanbrn.github.io/Links_Sociais/" target="_blank">
+          @breno_nathanael
+        </a>
+        <a
+          className="insta"
+          href="http://instagram.com/tiagootome"
+          target="_blank"
+        >
+          @tiagootome
+        </a>
       </FooterContainer>
     </LoginContainer>
-  )
+  );
 }
