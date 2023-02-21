@@ -52,6 +52,7 @@ export const ButtonClose = styled.button`
     height: 40px;
     background-color: transparent;
     border: 0;
+    cursor: pointer;
 
     img {
         width: 30px;

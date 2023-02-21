@@ -18,7 +18,6 @@ export function LoginPage() {
 
   function handleLogin() {
     const credentialsUser = credentials
-    
     if (user === credentialsUser.name && password === credentialsUser.password) {
       navigate('/home')
     } else {
@@ -37,8 +36,8 @@ export function LoginPage() {
           <input
             type="text"
             onChange={(event) => {
-              const value = event.target.value;
-              setUser(value);
+              const value = event.target.value
+              setUser(value)
             }}
             value={user}
             placeholder="Digite o usuário"
@@ -46,8 +45,8 @@ export function LoginPage() {
           <input
             type="password"
             onChange={(event) => {
-              const value = event.target.value;
-              setPassword(value);
+              const value = event.target.value
+              setPassword(value)
             }}
             value={password}
             placeholder="Digite a senha"

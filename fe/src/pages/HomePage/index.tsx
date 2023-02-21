@@ -1,38 +1,31 @@
-import { Button } from "../../components/Button";
-import { BodyContainer, ButtonClose, ContainerButtonClose, HeaderContainer, LogoContainer, MainContainer } from "./styles";
-import close from "../../assets/sair.png";
-import logo from "../../assets/LOGO.png";
+import { Button } from "../../components/Button"
+import {
+  BodyContainer,
+  ButtonClose,
+  ContainerButtonClose,
+  HeaderContainer,
+  LogoContainer,
+  MainContainer 
+} from "./styles";
+import close from "../../assets/sair.png"
+import logo from "../../assets/LOGO.png"
+import { useNavigate } from "react-router-dom"
+import { treinos } from "../../utils/treinos"
 
 export function HomePage() {
-  const treinos = [
-    {
-      nome: 'Biceps',
-      id: 1
-    },
-    {
-      nome: 'Triceps',
-      id: 2
-    },
-    {
-      nome: 'Costas',
-      id: 3
-    },
-    {
-      nome: 'Peito',
-      id: 4
-    }, 
-    {
-      nome: 'Pernas',
-      id: 5
-    }
-  ]
+  const navigate = useNavigate()
+
+
+  function handleLogout() {
+    navigate('/')
+  }
 
   return (
     <BodyContainer>
       <HeaderContainer>
         <LogoContainer src={logo} />
         <ContainerButtonClose>
-          <ButtonClose>
+          <ButtonClose onClick={() => handleLogout()}>
             <img src={close} alt="Fechar" />
           </ButtonClose>
         </ContainerButtonClose>

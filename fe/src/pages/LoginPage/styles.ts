@@ -58,7 +58,7 @@ export const ButtonContainer = styled.button`
 
     &:hover {
         border: 1px solid #fff;
-        background-color: gray;
+        background-color: #111;
         color: #fff;
     }
 `
