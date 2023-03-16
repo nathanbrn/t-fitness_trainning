@@ -1,8 +1,13 @@
 import { ButtonContainer } from "./styles";
 
-export function Button({ children }: any) {
+interface ButtonProps {
+    children: any;
+    onClick?: () => void;
+}
+
+export function Button({ children, onClick }: ButtonProps) {
     return (
-        <ButtonContainer>
+        <ButtonContainer onClick={onClick}>
             { children }
         </ButtonContainer>
     )

@@ -14,49 +14,10 @@ export const MainContainer = styled.main`
     margin: 0 auto;
 `
 
-export const HeaderContainer = styled.header`
-    display: flex;
-    justify-content: space-between;
-    background: rgba(17, 17, 17, 0.4);
-    height: 100px;
-    min-width: 100%;
-    margin: 0 auto;
-`
-
 export const BodyContainer = styled.div`
     padding: 0;
-    border: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
     box-sizing: border-box;
-    /* background-image: url(../../assets/background_body.png); */
-    background-repeat: no-repeat;
-    background-size: cover;
-    margin: 0 auto;
-`
-
-export const LogoContainer = styled.img`
-    width: 200px;
-    height: 50px;
-    margin: 15px;
-`
-
-export const ContainerButtonClose = styled.div`
-    display: flex;
-    width: 40px;
-    height: 40px;
-    margin: 10px 20px 0 0;
-`
-
-export const ButtonClose = styled.button`
-    display: flex;
-    width: 40px;
-    height: 40px;
-    background-color: transparent;
-    border: 0;
-    cursor: pointer;
-
-    img {
-        width: 30px;
-        height: 30px;
-        position: relative;
-    }
 `

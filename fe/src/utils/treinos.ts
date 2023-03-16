@@ -1,22 +1,40 @@
 export const treinos = [
     {
-      nome: 'Biceps',
-      id: 1
+      nome: 'biceps',
+      id: 1,
+      categoriasAlfabetica: {
+        b: {
+          letra: "b",
+          id: 1,
+          treinos: [
+            "Banco Scott",
+            "Banco Scott com Halteres",
+            "Barra Polia deitado",
+          ]
+        },
+        c: {
+          letra: "c",
+          id: 2,
+          treinos: [
+            "Concentrado"
+          ]
+        },
+      }
     },
     {
-      nome: 'Triceps',
+      nome: 'triceps',
       id: 2
     },
     {
-      nome: 'Costas',
+      nome: 'costas',
       id: 3
     },
     {
-      nome: 'Peito',
+      nome: 'peito',
       id: 4
     }, 
     {
-      nome: 'Pernas',
+      nome: 'pernas',
       id: 5
     }
   ]
